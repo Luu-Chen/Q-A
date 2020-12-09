@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index.html</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <link rel="stylesheet" href="stylesheets/all.css">
+    <link rel="stylesheet" href="stylesheets/index.css">
+</head>
+<body>
+    <section>
+        <nav class="navbar navbar-toggleable-md fixed-top navbar-transparent" color-on-scroll="500">
+            <div class="container">
+                <div class="navbar-translate">
+                    <button class="navbar-toggler navbar-toggler-right navbar-burger" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerindex.html02" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-bar"></span>
+                        <span class="navbar-toggler-bar"></span>
+                        <span class="navbar-toggler-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="./index.html">LOGO</a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarToggler">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="./index.html">預測離婚機率<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">服務項目</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">關於我們</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" rel="tooltip" title="Follow us on Twitter" data-placement="bottom" href="#">
+                                <i class="fa fa-twitter"></i>
+                                <p class="hidden-lg-up">Twitter</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="wrapper">
+            <div class="page-header section-dark" style="background-image: url('./images/test1.jpg')">
+                <div class="filter"></div>
+                <div class="content-center">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                <div class="title-brand">
+                                    <div class="cont prediction">
+                                        <div class="app">
+                                            <div class="app__bgimg">
+                                                <div class="app__bgimg-image app__bgimg-image--1">
+                                                </div>
+                                                <div class="app__bgimg-image app__bgimg-image--2">
+                                                </div>
+                                            </div>
+                                            <div class="app__img">
+                                                <img onmousedown="return false" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/537051/whiteTest4.png" alt="city" />
+                                            </div>
+                                            <div class="app__text app__text--1">
+                                                <div class="app__text-line app__text-line--4">離婚法律諮詢分析預判系統</div>
+                                                <div class="app__text-line app__text-line--3">
+                                                    <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#staticBackdrop">
+                                                        開始免費檢測
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="app__text app__text--2">
+                                                <div class="app__text-line app__text-line--4">離婚法律諮詢分析預判流程</div>
+                                                <div class="app__text-line app__text-line--2">
+                                                    <span class="cnt"></span>
+                                                    <ul class="c-cnt">
+                                                        <li class="text-left">回答簡單問題</li>
+                                                        <li class="text-left">AI系統分析個案狀況</li>
+                                                        <li class="text-left">取得預判結果報告書</li>
+                                                        <li class="text-left">免費法律客服諮詢</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="pages">
+                                                <ul class='pages__list'>
+                                                    <li data-target='1' class='pages__item pages__item--1 page__item-active'></li>
+                                                    <li data-target='2' class='pages__item pages__item--2'></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="result py-4">
+                                        <div class="row justify-content-center">
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                                <div class="card mb-3 left-side corner answer1 mt-5">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class="card-body h-100">
+                                                                <h5 class="card-title">符合你的法律服務:</h5>
+                                                                <p class="Divorce-proceedings text-center">離婚訴訟</p>
+                                                                <p class="Divorce-agreement text-center">離婚協議書</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card mb-3 left-side corner answer2">
+                                                    <div class="row  ">
+                                                        <div class="col-md-12">
+                                                            <div class="card-body h-100">
+                                                                <h5 class="card-title">離婚成功率:</h5>
+                                                                <span style="display: block; text-align: center;" class="mb-2">根據你所選成功率<p id="Probability"></p></span>
+                                                                <span style="display: block; text-align: center;">你所選的<p id="Options"></p></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card mb-3 left-side corner answer3">
+                                                    <div class="row  ">
+                                                        <div class="col-md-12">
+                                                            <div class="card-body h-100">
+                                                                <h5 class="card-title">扶養費金額:</h5>
+                                                                <div class="text-center">
+                                                                    <p class="Taipei">
+                                                                        扶養費金額：14623元 每月/每位小孩
+                                                                    </p>
+                                                                    <p class="NewTaipei">
+                                                                        扶養費金額：11068元 每月/每位小孩
+                                                                    </p>
+                                                                    <p class="Taoyuan">
+                                                                        扶養費金額：10842元 每月/每位小孩
+                                                                    </p>
+                                                                    <p class="Taichung">
+                                                                        扶養費金額：11563元 每月/每位小孩
+                                                                    </p>
+                                                                    <p class="Tainan">
+                                                                        扶養費金額：9571元 每月/每位小孩
+                                                                    </p>
+                                                                    <p class="Kaohsiung">
+                                                                        扶養費金額：10799元 每月/每位小孩
+                                                                    </p>
+                                                                    <p class="Keelung">
+                                                                        扶養費金額：11413元 每月/每位小孩
+                                                                    </p>
+                                                                    <p class="Yilan">
+                                                                        扶養費金額：10971元 每月/每位小孩
+                                                                    </p>
+                                                                    <p class="Hsinchu">
+                                                                        扶養費金額：13647元 每月/每位小孩
+                                                                    </p>
+                                                                    <p class="Hsinchu-County">
+                                                                        扶養費金額：12432元 每月/每位小孩
+                                                                    </p>
+                                                                    <p class="Miaoli">
+                                                                        扶養費金額：8841元 每月/每位小孩
+                                                                    </p>
+                                                                    <p class="Changhua">
+                                                                        扶養費金額：7922元 每月/每位小孩
+                                                                    </p>
+                                                                    <p class="Nantou">
+                                                                        扶養費金額：8705元 每月/每位小孩
+                                                                    </p>
+                                                                    <p class="Chiayi">
+                                                                        扶養費金額：10365元 每月/每位小孩
+                                                                    </p>
+                                                                    <p class="Chiayi-County">
+                                                                        扶養費金額：9334元 每月/每位小孩
+                                                                    </p>
+                                                                    <p class="Yunlin">
+                                                                        扶養費金額：8531元 每月/每位小孩
+                                                                    </p>
+                                                                    <p class="Pingtung">
+                                                                        扶養費金額：9446元 每月/每位小孩
+                                                                    </p>
+                                                                    <p class="Hualien">
+                                                                        扶養費金額：9850元 每月/每位小孩
+                                                                    </p>
+                                                                    <p class="Taitung">
+                                                                        扶養費金額：8586元 每月/每位小孩
+                                                                    </p>
+                                                                    <p class="Penghu">
+                                                                        扶養費金額：8569元 每月/每位小孩
+                                                                    </p>
+                                                                    <p class="city-color city-taipei">您所在的台北市的子女扶養費，就會落在29245/2=14623元</p>
+                                                                    <p class="city-color city-newtaipei">您所在的新北市的子女扶養費，就會落在22136/2=11068元</p>
+                                                                    <p class="city-color city-taoyuan">您所在的桃園市的子女扶養費，就會落在21684/2=10842元</p>
+                                                                    <p class="city-color city-taichung">您所在的台中市的子女扶養費，就會落在23126/2=11563元</p>
+                                                                    <p class="city-color city-tainan">您所在的台南市的子女扶養費，就會落在19142/2=9571元</p>
+                                                                    <p class="city-color city-kaohsiung">您所在的高雄市的子女扶養費，就會落在21598/2=10799元</p>
+                                                                    <p class="city-color city-keelung">您所在的基隆市的子女扶養費，就會落在22826/2=11413元</p>
+                                                                    <p class="city-color city-yilan">您所在的宜蘭縣的子女扶養費，就會落在21942/2=10971元</p>
+                                                                    <p class="city-color city-hsinchu">您所在的新竹市的子女扶養費，就會落在27294/2=13647元</p>
+                                                                    <p class="city-color city-hsinchu-county">您所在的新竹縣的子女扶養費，就會落在24864/2=12432元</p>
+                                                                    <p class="city-color city-miaoli">您所在的苗栗縣的子女扶養費，就會落在17682/2=8841元</p>
+                                                                    <p class="city-color city-changhua">您所在的彰化縣的子女扶養費，就會落在15844/2=7922元</p>
+                                                                    <p class="city-color city-nantou">您所在的南投縣的子女扶養費，就會落在17410/2=8705元</p>
+                                                                    <p class="city-color city-chiayi">您所在的嘉義市的子女扶養費，就會落在20730/2=10365元</p>
+                                                                    <p class="city-color city-chiayi-county">您所在的嘉義縣的子女扶養費，就會落在18668/2=9334元</p>
+                                                                    <p class="city-color city-yunlin">您所在的雲林縣的子女扶養費，就會落在17062/2=8531元</p>
+                                                                    <p class="city-color city-pingtung">您所在的屏東縣的子女扶養費，就會落在19892/2=9446元</p>
+                                                                    <p class="city-color city-hualien">您所在的花蓮縣的子女扶養費，就會落在19700/2=9850元</p>
+                                                                    <p class="city-color city-taitung">您所在的台東縣的子女扶養費，就會落在17172/2=8586元</p>
+                                                                    <p class="city-color city-penghu">您所在的澎湖縣的子女扶養費，就會落在17138/2=8569元</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="float-right mb-3">
+                                            <input type="button" name="reset" class="formReset btn-outline-info rounded border" value="重新檢測">
+                                        </div>
+                                    </div>
+                                    <div class="Loading mt-5">
+                                        <div>
+                                            <h2 class="text-center text-white">正在為你分析</h2>
+                                            <p class="text-center">請稍後片刻</p>
+                                        </div>
+                                        <h2 data-text="It's loading…" class="text-center text-white">It's loading…</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 modal-dialog">
+            <div class="modal-content">
+                <div class="newform">
+                    <form id="msform" name="">
+                        <fieldset>
+                            <h2 class="fs-title">您對離婚這件事的態度?
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </h2>
+                            <div class="row justify-content-center">
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                                    <ul style="list-style: none; margin-bottom: 0px; margin: 0 auto;" class="">
+                                        <li class="text-left" style="font-size: 18px;"><input type="radio" value="0" id="question1-1" name="question1">
+                                            <label for="question1-1">我受夠了，馬上就要離婚!</label>
+                                        </li>
+                                        <li class="text-left" style="font-size: 18px;">
+                                            <input type="radio" value="0" id="question1-2" name="question1">
+                                            <label for="question1-2">有這個想法，但還在考慮</label>
+                                        </li>
+                                        <li class="text-left" style="font-size: 18px;">
+                                            <input type="radio" value="0" id="question1-3" name="question1">
+                                            <label for="question1-3">單純想了解一下</label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <input type="button" name="next" class="next action-button" value="下一題">
+                        </fieldset>
+                        <fieldset>
+                            <h2 class="fs-title">對方對離婚這件事的態度是？
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </h2>
+                            <div class="row justify-content-center">
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                                    <ul style="list-style: none; margin-bottom: 0px; margin: 0 auto;" class="">
+                                        <li class="text-left" style="font-size: 20px;"><input type="radio" value="1" id="question2-1"  name="question2">
+                                            <label for="question2-1">同意離婚</label>
+                                        </li>
+                                        <li class="text-left" style="font-size: 20px;">
+                                            <input type="radio" value="1" id="question2-2"  name="question2">
+                                            <label for="question2-2">還在考慮</label>
+                                        </li>
+                                        <li class="text-left" style="font-size: 20px;">
+                                            <input type="radio" value="2" id="question2-3"  name="question2">
+                                            <label for="question2-3">不願意離婚</label>
+                                        </li>
+                                        <li class="text-left" style="font-size: 20px;">
+                                            <input type="radio" value="1" id="question2-4"  name="question2">
+                                            <label for="question2-4">還未與對方討論</label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <input type="button" name="previous" class="previous action-button" value="回上題" />
+                            <input type="button" name="next" class="next2 action-button" value="下一題" />
+                        </fieldset>
+                        <fieldset>
+                            <h2 class="fs-title">請告訴我您為什麼要離婚？(複選)
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </h2>
+                            <div class="row justify-content-center">
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                                    <ul style="list-style: none; margin-bottom: 0px;margin: 0 auto;" class="">
+                                        <li class="text-left" style="font-size: 20px;"><input type="checkbox" value="對方對我家暴" id="question3-1" data-num="76.6" name="question3">
+                                            <label for="question3-1">對方對我家暴</label>
+                                        </li>
+                                        <li class="text-left" style="font-size: 20px;">
+                                            <input type="checkbox" value="無性生活" id="question3-2" data-num="56.3" name="question3">
+                                            <label for="question3-2">無性生活</label>
+                                        </li>
+                                        <li class="text-left" style="font-size: 20px;">
+                                            <input type="checkbox" value="賭博、酗酒" id="question3-3" data-num="86.3"  name="question3">
+                                            <label for="question3-3">賭博、酗酒</label>
+                                        </li>
+                                        <li class="text-left" style="font-size: 20px;">
+                                            <input type="checkbox" value="對方不給我生活費" id="question3-4" data-num="85.3" name="question3">
+                                            <label for="question3-4">對方不給我生活費</label>
+                                        </li>
+                                        <li class="text-left" style="font-size: 20px;">
+                                            <input type="checkbox" value="婆媳問題" id="question3-5" data-num="59.2" name="question3">
+                                            <label for="question3-5">婆媳問題</label>
+                                        </li>
+                                        <li class="text-left" style="font-size: 20px;">
+                                            <input type="checkbox" value="吸毒" id="question3-6" data-num="91.2" name="question3">
+                                            <label for="question3-6">吸毒</label>
+                                        </li>
+                                        <li class="text-left" style="font-size: 20px;">
+                                            <input type="checkbox" value="對方外遇" id="question3-7" data-num="71.2" name="question3">
+                                            <label for="question3-7">對方外遇</label>
+                                        </li>
+                                        <li class="text-left" style="font-size: 20px;">
+                                            <input type="checkbox" value="失聯或分居兩年" id="question3-8" data-num="95.2" name="question3">
+                                            <label for="question3-8">失聯或分居兩年</label>
+                                        </li>
+                                        <li class="text-left" style="font-size: 20px;">
+                                            <input type="checkbox" value="其他" id="question3-9" data-num="56.3" name="question3">
+                                            <label for="question3-9">其他</label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <input type="button" name="previous" class="previous action-button" value="回上題" />
+                            <input type="button" name="next" class="next3 action-button ShowAnswer" value="下一題">
+                        </fieldset>
+                        <fieldset>
+                            <h2 class="fs-title">您認為您與對方是否能就小孩的監護權達成協議？
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </h2>
+                            <div class="row justify-content-center">
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                                    <ul style="list-style: none; margin-bottom: 0px;margin: 0 auto; " class="">
+                                        <li class="text-left" style="font-size: 20px;"><input type="radio" value="3" id="question4-1" name="question4">
+                                            <label for="question4-1">能</label>
+                                        </li>
+                                        <li class="text-left" style="font-size: 20px;">
+                                            <input type="radio" value="4" id="question4-2" name="question4">
+                                            <label for="question4-2">不能</label>
+                                        </li>
+                                        <li class="text-left" style="font-size: 20px;">
+                                            <input type="radio" value="3" id="question4-3" name="question4">
+                                            <label for="question4-3">沒有未滿20歲的小孩</label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <input type="button" name="previous" class="previous action-button" value="回上題">
+                            <input type="button" name="next" class="next4 action-button" value="下一題">
+                        </fieldset>
+                        <fieldset>
+                            <h2 class="fs-title">您認為您是否能與對方針對婚姻中的財產分配達成共識？
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </h2>
+                            <div class="row justify-content-center">
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                                    <ul style="list-style: none; margin-bottom: 0px; margin: 0 auto;" class="">
+                                        <li class="text-left" style="font-size: 20px;"><input type="radio" value="3" id="question5-1" name="question5">
+                                            <label for="question5-1">能</label>
+                                        </li>
+                                        <li class="text-left" style="font-size: 20px;">
+                                            <input type="radio" value="4" id="question5-2" name="question5">
+                                            <label for="question5-2">不能</label>
+                                        </li>
+                                        <li class="text-left" style="font-size: 20px;">
+                                            <input type="radio" value="3" id="question5-3" name="question5">
+                                            <label for="question5-3">沒有財產需要分配</label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <input type="button" name="previous" class="previous action-button" value="回上題">
+                            <input type="button" name="next" class="next5 action-button" value="下一題">
+                        </fieldset>
+                        <fieldset>
+                            <h2 class="fs-title">您所在的縣市
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </h2>
+                            <div class="row justify-content-center">
+                                <div class="col-xl-4 col-lg-5 col-md-5 col-sm-6">
+                                    <ul style="list-style: none; padding-left: 0px; margin-bottom: 0px; margin: 0 auto;" class="">
+                                        <li>
+                                            <select name="" id="mySelect" style="font-size: 20px;">
+                                                <option value="選擇城市" disabled selected hidden>選擇城市</option>
+                                                <option value="台北市">台北市</option>
+                                                <option value="新北市">新北市</option>
+                                                <option value="桃園市">桃園市</option>
+                                                <option value="台中市">台中市</option>
+                                                <option value="台南市">台南市</option>
+                                                <option value="高雄市">高雄市</option>
+                                                <option value="基隆市">基隆市</option>
+                                                <option value="宜蘭市">宜蘭市</option>
+                                                <option value="新竹市">新竹市</option>
+                                                <option value="新竹縣">新竹縣</option>
+                                                <option value="苗栗縣">苗栗縣</option>
+                                                <option value="彰化縣">彰化縣</option>
+                                                <option value="南投縣">南投縣</option>
+                                                <option value="嘉義市">嘉義市</option>
+                                                <option value="嘉義縣">嘉義縣</option>
+                                                <option value="雲林縣">雲林縣</option>
+                                                <option value="屏東縣">屏東縣</option>
+                                                <option value="花蓮縣">花蓮縣</option>
+                                                <option value="台東縣">台東縣</option>
+                                                <option value="澎湖縣">澎湖縣</option>
+                                            </select>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <input type="button" name="previous" class="previous action-button" value="回上題">
+                            <input type="submit" name="submit" class="submit action-button" data-dismiss="modal" aria-label="Close" value="開始分析" />
+                        </fieldset>
+                    </form>
+                </div>  
+            </div>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/0553ef907c.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+    <script src="stylesheets/Js/jquery-3.4.1.min.js"></script>
+    <script src='stylesheets/Js/jquery-ui.min.js'></script>
+    <script src="stylesheets/Js/all.js"></script>
+</body>
+
+</html>

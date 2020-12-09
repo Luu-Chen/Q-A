@@ -1,0 +1,914 @@
+/*Demo*/
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+#msform {
+	text-align: center;
+	position: relative;
+}
+#msform fieldset {
+  background: white;
+  margin-bottom: 20px;
+	border: 0 none;
+	border-radius: 3px;
+	padding: 1rem;
+	box-sizing: border-box;
+  width: 100%;
+
+	
+	/*stacking fieldsets above each other*/
+	position: absolute;
+}
+/*Hide all except first fieldset*/
+#msform fieldset:not(:first-of-type) {
+	display: none;
+}
+/*inputs*/
+#msform input, #msform textarea {
+	border: 1px solid #ccc;
+	border-radius: 3px;
+  margin-bottom: 10px;
+  display: inline-block;
+	box-sizing: border-box;
+	font-family: montserrat;
+	color: #2C3E50;
+	font-size: 13px;
+}
+/*buttons*/
+#msform .action-button {
+	width: 100px;
+	background: #27AE60;
+	font-weight: bold;
+	color: white;
+	border: 0 none;
+	border-radius: 1px;
+	cursor: pointer;
+	padding: 10px 5px;
+	margin: 10px 5px;
+}
+#msform .action-button:hover, #msform .action-button:focus {
+	box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
+}
+/*headings*/
+.fs-title {
+	font-size: 25px;
+	text-transform: uppercase;
+	color: #2C3E50;
+	margin-bottom: 10px;
+}
+.fs-subtitle {
+	font-weight: normal;
+	font-size: 13px;
+	color: #666;
+	margin-bottom: 20px;
+}
+/*progressbar*/
+#progressbar {
+	margin-bottom: 30px;
+	overflow: hidden;
+	/*CSS counters to number the steps*/
+	counter-reset: step;
+}
+#progressbar li {
+	list-style-type: none;
+	color: white;
+	text-transform: uppercase;
+	font-size: 9px;
+	width: 33.33%;
+	float: left;
+	position: relative;
+}
+#progressbar li:before {
+	content: counter(step);
+	counter-increment: step;
+	width: 20px;
+	line-height: 20px;
+	display: block;
+	font-size: 10px;
+	color: #333;
+	background: white;
+	border-radius: 3px;
+	margin: 0 auto 5px auto;
+}
+/*progressbar connectors*/
+#progressbar li:after {
+	content: '';
+	width: 100%;
+	height: 2px;
+	background: white;
+	position: absolute;
+	left: -50%;
+	top: 9px;
+	z-index: -1; /*put it behind the numbers*/
+}
+#progressbar li:first-child:after {
+	/*connector not needed before the first step*/
+	content: none; 
+}
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#progressbar li.active:before,  #progressbar li.active:after{
+	background: #27AE60;
+	color: white;
+}
+.Loading{
+  display: none;
+}
+h2 {
+  position: relative;
+  color: rgba(0, 0, 0, .3);
+  font-size: 4em
+}
+h2:before {
+  content: attr(data-text);
+  position: absolute;
+  overflow: hidden;
+  max-width: 7em;
+  padding-bottom: 5px;
+  white-space: nowrap;
+  color: blueviolet;
+  animation: loading 15s linear;
+}
+@keyframes loading {
+  0% {
+      max-width: 0;
+  }
+}
+@media(max-width:569px){
+  h2 {
+    position: relative;
+    color: rgba(0, 0, 0, .3);
+    font-size: 2.5em
+  }
+}
+.result{
+  display:none;
+}
+.Divorce-proceedings{
+  display: none;
+  font-size: 30px;
+  color: darkgoldenrod;
+}
+.Divorce-agreement{
+  display: none;
+  font-size: 30px;
+  color: darkgoldenrod;
+}
+#Options{
+  color: brown;
+  display: inline-block;
+}
+#Probability{
+  color: brown;
+  display: inline-block;
+}
+.Taipei{
+  display: none;
+}
+.NewTaipei{
+  display: none;
+}
+.Taoyuan{
+  display: none;
+}
+.Taichung{
+  display: none;
+}
+.Tainan{
+  display: none;
+}
+.Kaohsiung{
+  display: none;
+}
+.Keelung{
+  display: none;
+}
+.Yilan{
+  display: none;
+}
+.Hsinchu{
+  display: none;
+}
+.Hsinchu-County{
+  display: none;
+}
+.Miaoli{
+  display: none;
+}
+.Changhua{
+  display: none;
+}
+.Nantou{
+  display: none;
+}
+.Chiayi{
+  display: none;
+}
+.Chiayi-County{
+  display: none;
+}
+.Yunlin{
+  display: none;
+}
+.Pingtung{
+  display: none;
+}
+.Hualien{
+  display: none;
+}
+.Taitung{
+  display: none;
+}
+.Penghu{
+  display: none;
+}
+.city-color{
+  color: darkgoldenrod;
+}
+.city-taipei{
+  display: none;
+}
+.city-newtaipei{
+  display: none;
+}
+.city-taoyuan{
+  display: none;
+}
+.city-taichung{
+  display: none;
+}
+.city-tainan{
+  display: none;
+}
+.city-kaohsiung{
+  display: none;
+}
+.city-keelung{
+  display: none;
+}
+.city-yilan{
+  display: none;
+}
+.city-hsinchu{
+  display: none;
+}
+.city-hsinchu-county{
+  display: none;
+}
+.city-miaoli{
+  display: none;
+}
+.city-changhua{
+  display: none;
+}
+.city-nantou{
+  display: none;
+}
+.city-chiayi{
+  display: none;
+}
+.city-chiayi-county{
+  display: none;
+}
+.city-yunlin{
+  display: none;
+}
+.city-pingtung{
+  display: none;
+}
+.city-hualien{
+  display: none;
+}
+.city-taitung{
+  display: none;
+}
+.city-penghu{
+  display: none;
+}
+.left-side{
+  border-left: 5px solid #638ca5;
+}
+.corner{
+  background: #fff;
+  box-shadow: 0 7px 20px rgba(100, 28, 2, 0.135);
+}
+.corner:hover{
+  background-color: cadetblue;
+}
+.corner:hover h5{
+  color: white;
+}
+.corner:hover p{
+  color: white;
+}
+.corner:hover span{
+  color: white;
+}
+.corner::after{
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0px;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px 0;
+  -webkit-transition: inherit;
+  transition: inherit;
+  background-color: cadetblue;
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9JzMwMHB4JyB3aWR0aD0nMzAwcHgnICBmaWxsPSIjZmZmZmZmIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGRhdGEtbmFtZT0iTGF5ZXIgMSIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHg9IjBweCIgeT0iMHB4Ij48dGl0bGU+NTI8L3RpdGxlPjxwYXRoIGQ9Ik04MS4zMDMyOSwzOC41MjkzOUExNC4wMTgsMTQuMDE4LDAsMSwwLDYxLjQ3NywxOC43MDY3MUw0Ny4wMDMxNSwzMy4xNzkxNGExNC4wMzAzNywxNC4wMzAzNywwLDAsMCwwLDE5LjgyMTcxLDQuODAxMTMsNC44MDExMywwLDAsMS02Ljc4OTc5LDYuNzg5ODcsMjMuNjQzMjcsMjMuNjQzMjcsMCwwLDEsMC0zMy40MDE0NUw1NC42ODcyMSwxMS45MTY4NEEyMy42MjAzLDIzLjYyMDMsMCwwLDEsODguMDkzMDgsNDUuMzE5MjdMODAuOTIzOCw1Mi40ODcxMWE0LjgwMTE0LDQuODAxMTQsMCwwLDEtNi43ODk4LTYuNzg5ODdaTTExLjkwNzQxLDg4LjA5MzlhMjMuNjUwNTMsMjMuNjUwNTMsMCwwLDAsMzMuNDA1ODYtLjAwMUw1OS43ODY2NCw3My42MjE0N2EyMy42MTU4MywyMy42MTU4MywwLDAsMCwwLTMzLjQwMTQ1LDQuODAxMTQsNC44MDExNCwwLDAsMC02Ljc4OTc5LDYuNzg5ODgsMTQuMDE1MzEsMTQuMDE1MzEsMCwwLDEsMCwxOS44MjI2OEwzOC41MjM0OCw4MS4zMDRBMTQuMDE4LDE0LjAxOCwwLDEsMSwxOC42OTcyLDYxLjQ4MTM1TDI1Ljg2Niw1NC4zMTM1YTQuODAxMTQsNC44MDExNCwwLDAsMC02Ljc4OTgtNi43ODk4N2wtNy4xNjg3OSw3LjE2Nzg1QTIzLjY0NDg5LDIzLjY0NDg5LDAsMCwwLDExLjkwNzQxLDg4LjA5MzlaIj48L3BhdGg+PC9zdmc+);
+}
+.corner:hover:after{
+    background-color: white;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9JzMwMHB4JyB3aWR0aD0nMzAwcHgnICBmaWxsPSIjZmI2ZjNjIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGRhdGEtbmFtZT0iTGF5ZXIgMSIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHg9IjBweCIgeT0iMHB4Ij48dGl0bGU+NTI8L3RpdGxlPjxwYXRoIGQ9Ik04MS4zMDMyOSwzOC41MjkzOUExNC4wMTgsMTQuMDE4LDAsMSwwLDYxLjQ3NywxOC43MDY3MUw0Ny4wMDMxNSwzMy4xNzkxNGExNC4wMzAzNywxNC4wMzAzNywwLDAsMCwwLDE5LjgyMTcxLDQuODAxMTMsNC44MDExMywwLDAsMS02Ljc4OTc5LDYuNzg5ODcsMjMuNjQzMjcsMjMuNjQzMjcsMCwwLDEsMC0zMy40MDE0NUw1NC42ODcyMSwxMS45MTY4NEEyMy42MjAzLDIzLjYyMDMsMCwwLDEsODguMDkzMDgsNDUuMzE5MjdMODAuOTIzOCw1Mi40ODcxMWE0LjgwMTE0LDQuODAxMTQsMCwwLDEtNi43ODk4LTYuNzg5ODdaTTExLjkwNzQxLDg4LjA5MzlhMjMuNjUwNTMsMjMuNjUwNTMsMCwwLDAsMzMuNDA1ODYtLjAwMUw1OS43ODY2NCw3My42MjE0N2EyMy42MTU4MywyMy42MTU4MywwLDAsMCwwLTMzLjQwMTQ1LDQuODAxMTQsNC44MDExNCwwLDAsMC02Ljc4OTc5LDYuNzg5ODgsMTQuMDE1MzEsMTQuMDE1MzEsMCwwLDEsMCwxOS44MjI2OEwzOC41MjM0OCw4MS4zMDRBMTQuMDE4LDE0LjAxOCwwLDEsMSwxOC42OTcyLDYxLjQ4MTM1TDI1Ljg2Niw1NC4zMTM1YTQuODAxMTQsNC44MDExNCwwLDAsMC02Ljc4OTgtNi43ODk4N2wtNy4xNjg3OSw3LjE2Nzg1QTIzLjY0NDg5LDIzLjY0NDg5LDAsMCwwLDExLjkwNzQxLDg4LjA5MzlaIj48L3BhdGg+PC9zdmc+);
+}
+.navbar-brand:hover{
+  background-color: #27AE60;
+  border-radius: 5px;
+}
+.nav-item:hover{
+  background-color: #27AE60;
+  border-radius: 5px;
+}
+.cont {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+    overflow: hidden;
+  }
+  
+  .app {
+    position: relative;
+    min-width: 100%;
+    -webkit-box-shadow: 0 0 60px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 0 60px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    min-height:600px;
+  }
+  
+  .app__bgimg {
+    position: absolute;
+    top: 0;
+    left: -2.5%;
+    width: 105%;
+    height: 100%;
+    -webkit-transition: -webkit-transform 3.5s 770ms;
+    transition: -webkit-transform 3.5s 770ms;
+    transition: transform 3.5s 770ms;
+    transition: transform 3.5s 770ms, -webkit-transform 3.5s 770ms;
+  }
+  
+  .app__bgimg-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+  
+  .app__bgimg-image--1 {
+    background: url("../images/banner.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+  
+  .app__bgimg-image--2 {
+    background: url("../images/2.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 0;
+    -webkit-transition: opacity 0ms 1300ms;
+    transition: opacity 0ms 1300ms;
+    will-change: opacity;
+  }
+  .app__text {
+    position: absolute;
+    right: 25px;
+    top: 35%;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    z-index: 1;
+  }
+  
+  .app__text-line {
+    -webkit-transition: opacity 750ms 500ms, -webkit-transform 1500ms 400ms;
+    transition: opacity 750ms 500ms, -webkit-transform 1500ms 400ms;
+    transition: transform 1500ms 400ms, opacity 750ms 500ms;
+    transition: transform 1500ms 400ms, opacity 750ms 500ms, -webkit-transform 1500ms 400ms;
+    will-change: transform, opacity;
+    -webkit-user-select: none;
+      -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+  }
+  
+  .app__text-line--4 {
+    -webkit-transition: opacity 1500ms 1500ms, -webkit-transform 1500ms 1500ms;
+    transition: opacity 1500ms 1500ms, -webkit-transform 1500ms 1500ms;
+    transition: transform 1500ms 1500ms, opacity 1500ms 1500ms;
+    transition: transform 1500ms 1500ms, opacity 1500ms 1500ms, -webkit-transform 1500ms 1500ms;
+  }
+  
+  .app__text-line--3 {
+    -webkit-transition: opacity 1500ms 1750ms, -webkit-transform 1500ms 1600ms;
+    transition: opacity 1500ms 1750ms, -webkit-transform 1500ms 1600ms;
+    transition: transform 1500ms 1600ms, opacity 1500ms 1750ms;
+    transition: transform 1500ms 1600ms, opacity 1500ms 1750ms, -webkit-transform 1500ms 1600ms;
+  }
+  
+  .app__text-line--2 {
+    -webkit-transition: opacity 1500ms 2000ms, -webkit-transform 1500ms 1700ms;
+    transition: opacity 1500ms 2000ms, -webkit-transform 1500ms 1700ms;
+    transition: transform 1500ms 1700ms, opacity 1500ms 2000ms;
+    transition: transform 1500ms 1700ms, opacity 1500ms 2000ms, -webkit-transform 1500ms 1700ms;
+  }
+  
+  .app__text-line--1 {
+    -webkit-transition: opacity 1500ms 2250ms, -webkit-transform 1500ms 1800ms;
+    transition: opacity 1500ms 2250ms, -webkit-transform 1500ms 1800ms;
+    transition: transform 1500ms 1800ms, opacity 1500ms 2250ms;
+    transition: transform 1500ms 1800ms, opacity 1500ms 2250ms, -webkit-transform 1500ms 1800ms;
+  }
+  
+  .app__text-line--4 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #0A101D;
+  }
+  
+  .app__text-line--3 {
+    font-size: 40px;
+    font-weight: 300;
+  }
+  
+  .app__text-line--2 {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #0099CC;
+  }
+  
+  .app__text-line--1 {
+    margin-top: 15px;
+  }
+  
+  .app__text-line--1 img {
+    width: 50px;
+  }
+  
+  .app__text--1 .app__text-line {
+    -webkit-transform: translate3d(0, -125px, 0);
+            transform: translate3d(0, -125px, 0);
+    opacity: 0;
+  }
+  
+  .app__text--2 {
+    right: initial;
+    top: 40%;
+    left: 80px;
+    z-index: -1;
+    -webkit-transition: z-index 1500ms;
+    transition: z-index 1500ms;
+  }
+  
+  .app__text--2 .app__text-line--4 {
+    opacity: 0;
+    -webkit-transition: opacity 400ms 125ms, -webkit-transform 1500ms -75ms;
+    transition: opacity 400ms 125ms, -webkit-transform 1500ms -75ms;
+    transition: transform 1500ms -75ms, opacity 400ms 125ms;
+    transition: transform 1500ms -75ms, opacity 400ms 125ms, -webkit-transform 1500ms -75ms;
+  }
+  
+  .app__text--2 .app__text-line--3 {
+    opacity: 0;
+    -webkit-transition: opacity 400ms 200ms, -webkit-transform 1500ms 0ms;
+    transition: opacity 400ms 200ms, -webkit-transform 1500ms 0ms;
+    transition: transform 1500ms 0ms, opacity 400ms 200ms;
+    transition: transform 1500ms 0ms, opacity 400ms 200ms, -webkit-transform 1500ms 0ms;
+  }
+  
+  .app__text--2 .app__text-line--2 {
+    opacity: 0;
+    -webkit-transition: opacity 400ms 275ms, -webkit-transform 1500ms 75ms;
+    transition: opacity 400ms 275ms, -webkit-transform 1500ms 75ms;
+    transition: transform 1500ms 75ms, opacity 400ms 275ms;
+    transition: transform 1500ms 75ms, opacity 400ms 275ms, -webkit-transform 1500ms 75ms;
+  }
+  
+  .app__text--2 .app__text-line--1 {
+    opacity: 0;
+    -webkit-transition: opacity 400ms 350ms, -webkit-transform 1500ms 150ms;
+    transition: opacity 400ms 350ms, -webkit-transform 1500ms 150ms;
+    transition: transform 1500ms 150ms, opacity 400ms 350ms;
+    transition: transform 1500ms 150ms, opacity 400ms 350ms, -webkit-transform 1500ms 150ms;
+  }
+  
+  .app__img {
+    position: absolute;
+    -webkit-transform: translate3d(0, -750px, 0);
+            transform: translate3d(0, -750px, 0);
+    width: 105%;
+    height: 100%;
+    -webkit-transition: -webkit-transform 3s cubic-bezier(0.6, 0.13, 0.31, 1.02);
+    transition: -webkit-transform 3s cubic-bezier(0.6, 0.13, 0.31, 1.02);
+    transition: transform 3s cubic-bezier(0.6, 0.13, 0.31, 1.02);
+    transition: transform 3s cubic-bezier(0.6, 0.13, 0.31, 1.02), -webkit-transform 3s cubic-bezier(0.6, 0.13, 0.31, 1.02);
+    will-change: transform;
+  }
+  .app__img img {
+    min-width: 100%;
+    -webkit-user-select: none;
+      -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+  }
+  
+  .initial .app__img {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, -140px, 0);
+  }
+  
+  .initial .app__text--1 .app__text-line--1 {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    -webkit-transition: opacity 400ms 1600ms, -webkit-transform 1500ms 1400ms;
+    transition: opacity 400ms 1600ms, -webkit-transform 1500ms 1400ms;
+    transition: transform 1500ms 1400ms, opacity 400ms 1600ms;
+    transition: transform 1500ms 1400ms, opacity 400ms 1600ms, -webkit-transform 1500ms 1400ms;
+    opacity: 1;
+  }
+  
+  .initial .app__text--1 .app__text-line--2 {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    -webkit-transition: opacity 400ms 1675ms, -webkit-transform 1500ms 1475ms;
+    transition: opacity 400ms 1675ms, -webkit-transform 1500ms 1475ms;
+    transition: transform 1500ms 1475ms, opacity 400ms 1675ms;
+    transition: transform 1500ms 1475ms, opacity 400ms 1675ms, -webkit-transform 1500ms 1475ms;
+    opacity: 1;
+  }
+  
+  .initial .app__text--1 .app__text-line--3 {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    -webkit-transition: opacity 400ms 1750ms, -webkit-transform 1500ms 1550ms;
+    transition: opacity 400ms 1750ms, -webkit-transform 1500ms 1550ms;
+    transition: transform 1500ms 1550ms, opacity 400ms 1750ms;
+    transition: transform 1500ms 1550ms, opacity 400ms 1750ms, -webkit-transform 1500ms 1550ms;
+    opacity: 1;
+  }
+  
+  .initial .app__text--1 .app__text-line--4 {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    -webkit-transition: opacity 400ms 1825ms, -webkit-transform 1500ms 1625ms;
+    transition: opacity 400ms 1825ms, -webkit-transform 1500ms 1625ms;
+    transition: transform 1500ms 1625ms, opacity 400ms 1825ms;
+    transition: transform 1500ms 1625ms, opacity 400ms 1825ms, -webkit-transform 1500ms 1625ms;
+    opacity: 1;
+  }
+  
+  .active .app__bgimg {
+    -webkit-transform: translate3d(10px, 0, 0) scale(1.05);
+            transform: translate3d(10px, 0, 0) scale(1.05);
+    -webkit-transition: -webkit-transform 5s 850ms ease-in-out;
+    transition: -webkit-transform 5s 850ms ease-in-out;
+    transition: transform 5s 850ms ease-in-out;
+    transition: transform 5s 850ms ease-in-out, -webkit-transform 5s 850ms ease-in-out;
+  }
+  
+  .active .app__bgimg .app__bgimg-image--2 {
+    opacity: 1;
+    -webkit-transition: opacity 0ms 1500ms;
+    transition: opacity 0ms 1500ms;
+  }
+  
+  .active .app__img {
+    -webkit-transition: -webkit-transform 3s cubic-bezier(0.6, 0.13, 0.31, 1.02);
+    transition: -webkit-transform 3s cubic-bezier(0.6, 0.13, 0.31, 1.02);
+    transition: transform 3s cubic-bezier(0.6, 0.13, 0.31, 1.02);
+    transition: transform 3s cubic-bezier(0.6, 0.13, 0.31, 1.02), -webkit-transform 3s cubic-bezier(0.6, 0.13, 0.31, 1.02);
+    -webkit-transform: translate3d(0, -1850px, 0);
+            transform: translate3d(0, -1850px, 0);
+  }
+  
+  .active .app__text--1 {
+    z-index: -1;
+    -webkit-transition: z-index 0ms 1500ms;
+    transition: z-index 0ms 1500ms;
+  }
+  
+  .active .app__text--1 .app__text-line--1 {
+    -webkit-transform: translate3d(0, -125px, 0);
+            transform: translate3d(0, -125px, 0);
+    -webkit-transition: opacity 400ms 500ms, -webkit-transform 1500ms 300ms;
+    transition: opacity 400ms 500ms, -webkit-transform 1500ms 300ms;
+    transition: transform 1500ms 300ms, opacity 400ms 500ms;
+    transition: transform 1500ms 300ms, opacity 400ms 500ms, -webkit-transform 1500ms 300ms;
+    opacity: 0;
+  }
+  
+  .active .app__text--1 .app__text-line--2 {
+    -webkit-transform: translate3d(0, -125px, 0);
+            transform: translate3d(0, -125px, 0);
+    -webkit-transition: opacity 400ms 575ms, -webkit-transform 1500ms 375ms;
+    transition: opacity 400ms 575ms, -webkit-transform 1500ms 375ms;
+    transition: transform 1500ms 375ms, opacity 400ms 575ms;
+    transition: transform 1500ms 375ms, opacity 400ms 575ms, -webkit-transform 1500ms 375ms;
+    opacity: 0;
+  }
+  
+  .active .app__text--1 .app__text-line--3 {
+    -webkit-transform: translate3d(0, -125px, 0);
+            transform: translate3d(0, -125px, 0);
+    -webkit-transition: opacity 400ms 650ms, -webkit-transform 1500ms 450ms;
+    transition: opacity 400ms 650ms, -webkit-transform 1500ms 450ms;
+    transition: transform 1500ms 450ms, opacity 400ms 650ms;
+    transition: transform 1500ms 450ms, opacity 400ms 650ms, -webkit-transform 1500ms 450ms;
+    opacity: 0;
+  }
+  
+  .active .app__text--1 .app__text-line--4 {
+    -webkit-transform: translate3d(0, -125px, 0);
+            transform: translate3d(0, -125px, 0);
+    -webkit-transition: opacity 400ms 725ms, -webkit-transform 1500ms 525ms;
+    transition: opacity 400ms 725ms, -webkit-transform 1500ms 525ms;
+    transition: transform 1500ms 525ms, opacity 400ms 725ms;
+    transition: transform 1500ms 525ms, opacity 400ms 725ms, -webkit-transform 1500ms 525ms;
+    opacity: 0;
+  }
+  
+  .active .app__text--2 {
+    z-index: 1;
+  }
+  
+  .active .app__text--2 .app__text-line--1 {
+    -webkit-transform: translate3d(0, -125px, 0);
+            transform: translate3d(0, -125px, 0);
+    -webkit-transition: opacity 1300ms 1300ms, -webkit-transform 2500ms 1100ms;
+    transition: opacity 1300ms 1300ms, -webkit-transform 2500ms 1100ms;
+    transition: transform 2500ms 1100ms, opacity 1300ms 1300ms;
+    transition: transform 2500ms 1100ms, opacity 1300ms 1300ms, -webkit-transform 2500ms 1100ms;
+    opacity: 1;
+  }
+  
+  .active .app__text--2 .app__text-line--2 {
+    -webkit-transform: translate3d(0, -125px, 0);
+            transform: translate3d(0, -125px, 0);
+    -webkit-transition: opacity 1300ms 1575ms, -webkit-transform 2500ms 1175ms;
+    transition: opacity 1300ms 1575ms, -webkit-transform 2500ms 1175ms;
+    transition: transform 2500ms 1175ms, opacity 1300ms 1575ms;
+    transition: transform 2500ms 1175ms, opacity 1300ms 1575ms, -webkit-transform 2500ms 1175ms;
+    opacity: 1;
+  }
+  
+  .active .app__text--2 .app__text-line--3 {
+    -webkit-transform: translate3d(0, -125px, 0);
+            transform: translate3d(0, -125px, 0);
+    -webkit-transition: opacity 1300ms 1850ms, -webkit-transform 2500ms 1250ms;
+    transition: opacity 1300ms 1850ms, -webkit-transform 2500ms 1250ms;
+    transition: transform 2500ms 1250ms, opacity 1300ms 1850ms;
+    transition: transform 2500ms 1250ms, opacity 1300ms 1850ms, -webkit-transform 2500ms 1250ms;
+    opacity: 1;
+  }
+  
+  .active .app__text--2 .app__text-line--4 {
+    -webkit-transform: translate3d(0, -125px, 0);
+            transform: translate3d(0, -125px, 0);
+    -webkit-transition: opacity 1300ms 2125ms, -webkit-transform 2500ms 1325ms;
+    transition: opacity 1300ms 2125ms, -webkit-transform 2500ms 1325ms;
+    transition: transform 2500ms 1325ms, opacity 1300ms 2125ms;
+    transition: transform 2500ms 1325ms, opacity 1300ms 2125ms, -webkit-transform 2500ms 1325ms;
+    opacity: 1;
+  }  
+  @-webkit-keyframes scroll {
+    100% {
+      -webkit-transform: translate(-50%, 15px);
+              transform: translate(-50%, 15px);
+    }
+  }
+  
+  @keyframes scroll {
+    100% {
+      -webkit-transform: translate(-50%, 15px);
+              transform: translate(-50%, 15px);
+    }
+  }
+  
+  .pages {
+    position: absolute;
+    top: 45%;
+    right: 1%;
+  }
+  
+  .pages__list {
+    list-style-type: none;
+  }
+  
+  .pages__item {
+    position: relative;
+    margin-bottom: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 3px solid tomato;
+    cursor: pointer;
+  }
+  
+  .pages__item:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%) scale(0, 0);
+            transform: translate(-50%, -50%) scale(0, 0);
+    width: 75%;
+    height: 75%;
+    border-radius: 50%;
+    background-color: slateblue;
+    opacity: 0;
+    -webkit-transition: 500ms;
+    transition: 500ms;
+  }
+  
+  .pages__item:hover:after {
+    -webkit-transform: translate(-50%, -50%) scale(1, 1);
+            transform: translate(-50%, -50%) scale(1, 1);
+    opacity: 1;
+  }
+  
+  .page__item-active:after {
+    -webkit-transform: translate(-50%, -50%) scale(1, 1);
+            transform: translate(-50%, -50%) scale(1, 1);
+    opacity: 1;
+  }
+  
+  .icon-link {
+    position: absolute;
+    left: 5px;
+    bottom: 5px;
+    width: 50px;
+  }
+  
+  .icon-link img {
+    width: 100%;
+    vertical-align: top;
+  }
+  
+  .icon-link--twitter {
+    left: auto;
+    right: 5px;
+  }
+  .fixed-top{
+    margin: 0 auto;
+    max-width: 1090px;
+  }
+  
+
+  @media(max-width:1200px){
+    .initial .app__img {
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, -120px, 0);
+    }
+    .active .app__img {
+      -webkit-transform: translate3d(0, -1680px, 0);
+              transform: translate3d(0, -1680px, 0);
+    }
+    .fixed-top{
+      margin: 0 auto;
+      max-width: 910px;
+    }
+  }
+  @media(max-width:992px){
+    .app__text {
+      right: 25px;
+    }
+    .initial .app__img {
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0px, 0);
+    }
+    .active .app__img {
+      -webkit-transform: translate3d(0, -1120px, 0);
+              transform: translate3d(0, -1120px, 0);
+    }
+    .app__text--2{
+      left: 40px;
+    }
+    .fixed-top{
+      margin: 0 auto;
+      max-width: 670px;
+    }
+  } 
+  @media(max-width:769px){
+    .app__text--2{
+      left: 10px;
+    }
+    .app__text {
+      right: 10px;
+    }
+    .app__img{
+      width: 171%;
+    }
+    .active .app__img {
+      -webkit-transform: translate3d(0, -1790px, 0);
+              transform: translate3d(0, -1790px, 0);
+    }
+    .fixed-top{
+      margin: 0 auto;
+    }
+  } 
+  @media(max-width:515px){
+    .fixed-top{
+      margin: 0 20px 0 20px;
+      max-width: 100%;
+    }
+    .app__text--2{
+      top: 240px;
+    }
+  } 
+  @media(max-height:1367px){
+    .initial .app__img {
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0px, 0);
+    }
+    .active .app__img {
+      -webkit-transform: translate3d(0, -1820px, 0);
+              transform: translate3d(0, -1820px, 0);
+    }
+  } 
+  @media(max-height:1366px){
+    .initial .app__img {
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0px, 0);
+    }
+    .active .app__img {
+      -webkit-transform: translate3d(0, -1420px, 0);
+              transform: translate3d(0, -1420px, 0);
+    }
+  } 
+  .cnt{
+    content: "";
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    background: #ffd402;
+    border-radius: 50%;
+    top: calc( (40 - 24) / 2 * 0px );
+  }
+  .c-cnt{
+    list-style: none;
+    border-left: 8px solid #ffd402;
+    margin-left: 16px;
+    padding: 40px 0px 0px 0px;
+    width: 180px;
+  }
+  .c-cnt li{
+    padding-left: 15px;
+    border-bottom: 4px solid #eef4f7;
+    padding-top: 8px;
+    position: relative;
+    margin-left: -8px;
+  }
+  .c-cnt li::before{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: #eef4f7;
+    left: 2px;
+    top: 15px;
+  }
+
+  .box{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    z-index: -999;
+    margin: 0 auto;
+    background-color: aqua;
+  }
